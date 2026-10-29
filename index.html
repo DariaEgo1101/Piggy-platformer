@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f5">
+  <title>Свинка-копилка — охота за монетами</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="header">
+      <div>
+        <p class="eyebrow">МИЛОЕ ПРИКЛЮЧЕНИЕ</p>
+        <h1>Свинка-копилка</h1>
+        <p class="subtitle">Собери монетки и доберись до финиша!</p>
+      </div>
+      <div class="piggy-badge" aria-hidden="true">🐷</div>
+    </header>
+
+    <section class="game-card" aria-label="Игровое поле">
+      <div class="hud">
+        <div class="stat">
+          <span class="stat-icon">🪙</span>
+          <span>Монеты</span>
+          <strong id="score">0 / 3</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">🏆</span>
+          <span>Рекорд</span>
+          <strong id="best">0</strong>
+        </div>
+        <div class="status" id="status" aria-live="polite">Готов к игре</div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas
+          id="game"
+          width="900"
+          height="520"
+          aria-label="Платформер. Управляйте свинкой, собирайте монеты и избегайте опасностей."
+          tabindex="0"
+        ></canvas>
+
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="overlay-emoji" id="overlayEmoji">🐷</div>
+            <h2 id="overlayTitle">На старт!</h2>
+            <p id="overlayText">Собери все три монетки и найди финиш.</p>
+            <button id="overlayButton" class="primary-button">Играть!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button id="startButton" class="primary-button">▶ Старт</button>
+        <button id="pauseButton" class="secondary-button">Ⅱ Пауза</button>
+        <button id="resumeButton" class="secondary-button">▶ Продолжить</button>
+        <button id="restartButton" class="secondary-button">↻ Заново</button>
+      </div>
+
+      <div class="mobile-controls" aria-label="Сенсорное управление">
+        <div class="move-controls">
+          <button class="control-button" data-control="left"
+                  aria-label="Влево">←</button>
+          <button class="control-button" data-control="right"
+                  aria-label="Вправо">→</button>
+        </div>
+        <button class="control-button jump-button" data-control="jump"
+                aria-label="Прыжок">ПРЫЖОК ↑</button>
+      </div>
+    </section>
+
+    <section class="instructions">
+      <h2>Как играть</h2>
+      <div class="instruction-grid">
+        <div><kbd>←</kbd> <kbd>→</kbd><span>Движение</span></div>
+        <div><kbd>A</kbd> <kbd>D</kbd><span>Влево и вправо</span></div>
+        <div><kbd>Space</kbd> <kbd>W</kbd><span>Прыжок</span></div>
+        <div><kbd>P</kbd><span>Пауза</span></div>
+      </div>
+      <p class="hint">Собери все монеты, перепрыгни опасный участок и коснись финиша. На телефоне используй кнопки под игровым полем.</p>
+    </section>
+
+    <footer>© 2026 Дарья Егорова. Сделано с любовью к монеткам ♡</footer>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
